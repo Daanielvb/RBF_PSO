@@ -25,7 +25,7 @@ public class AuxiliaryFunctions {
 	 * da RBF a ser usada após o Kmeans
 	 */
 	public static double calculateRBFWeights(Ponto centro,Ponto p,double varianca ){
-		return Math.exp(-Math.pow(calculateEuclideanDistance4Dimensions(centro,p),2)/Math.pow((2 * varianca),2));
+		return Math.exp(-Math.pow(calculateEuclideanDistance4Dimensions(centro,p),2)/2* (Math.pow(varianca,2)));
 	}
 	
 	
