@@ -1,13 +1,8 @@
 package kmeans;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-import javax.swing.JOptionPane;
 
 
 public class Kmeans {
@@ -32,7 +27,7 @@ public class Kmeans {
 	
 	public void generateKClusters(int k){
 		for (int i = 0; i < k; i++){
-			this.clusters.add(new Cluster());
+			this.clusters.add(new Cluster(this.database));
 		}
 	}
 
@@ -63,7 +58,6 @@ public class Kmeans {
 	// Recalculate Clusters centers after Ponto addition
 	
 	public boolean recalculateClusters(){
-		int counter = 0;
 		for(int i = 0; i < this.clusters.size(); i++){
 			boolean flag = this.clusters.get(i).hasChangedPosition();
 			if (flag){
@@ -94,8 +88,46 @@ public class Kmeans {
 		/*
 		 * Deverá fazer todo o procedimento do main
 		 */
-	public void kmeans(int k,String db) throws FileNotFoundException{
-		//TODO - RODRIGO
+	public void kmeans(int k,ArrayList<Ponto> db) throws FileNotFoundException{
+		
+		this.setDatabase(db);
+		this.generateKClusters(k);
+		boolean flag = true;
+		
+		//Processamento do kmeans
+		while (flag)
+		{
+			this.calculateRelativeDistances();
+			this.insertIntoClusters();
+			flag = this.recalculateClusters();
+			if (flag)
+			{
+				this.clearClusters();
+				this.clearPontos();
+			}
+		}
+		
+		//Calculo da variancia
+		for (int i = 0; i < this.getClusters().size(); i++) {
+			this.getClusters().get(i).calculateVariance();
+			
+		}
+	}
+	
+	public String printAllClustersCenter()
+	{
+		String str = "";
+		for (int i = 0; i < this.getClusters().size(); i++)
+			str = str + this.getClusters().get(i).getCenter().printCoordinates() + "\n";
+		return str;
+	}
+	
+	public String printAllClustersVariance()
+	{
+		String str = "";
+		for (int i = 0; i < this.getClusters().size(); i++)
+			str = str + this.getClusters().get(i).getVariance() + "\n";
+		return str;
 	}
 	
 	// Getters & setters

@@ -11,12 +11,11 @@ public class Cluster {
 	
 	
 
-	public Cluster(){
-		double x = Math.random(); 
-		double y = Math.random();
-		double z = Math.random();
-		double w = Math.random();
-		this.center = new Ponto(x,y,z,w);
+	public Cluster(ArrayList <Ponto> ar){
+		int index = (int)(Math.random()*150);
+		Ponto pt = ar.get(index);
+		
+		this.center = pt;
 		this.contains = new ArrayList<Ponto>();
 		
 	}
