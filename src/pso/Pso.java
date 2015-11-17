@@ -60,6 +60,7 @@ public class Pso {
 	private static ArrayList<Particula> particulas;
 
 	private static void criaEnxame(int numParticulas, int numNeuronios) {
+		particulas = new ArrayList<Particula>();
 		// cria um enxame com n particulas (definido pelo usuario; geralmente
 		// entre 20 e 50) que sao d-dimensionais (definido pelo numero de
 		// neurinios da camada escondida da rbf).
@@ -84,7 +85,7 @@ public class Pso {
 		}
 	}
 
-	public static void iniciaPSO(int numIteracoes, int numParticulas, int numNeuronios) {
+	public Pso(int numIteracoes, int numParticulas, int numNeuronios) {
 		criaEnxame(numParticulas, numNeuronios);
 		for (int i = 0; i < numIteracoes; i++) {
 			for (int j = 0; j < particulas.size(); j++) {
