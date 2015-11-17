@@ -18,7 +18,7 @@ public class LeitorEntradaRBF {
 	}
 	
 	/*
-	 * Converte a base de entrada para ArrayList<Double>
+	 * Converts database to ArrayList<Double>
 	 */
 	public void lerEntrada(){
 		BufferedReader br = null;
@@ -50,7 +50,7 @@ public class LeitorEntradaRBF {
 	}
 	
 	/*
-	 * Converte a base lida para ArrayList<Ponto>
+	 * Converts current database read to ArrayList<Ponto>
 	 */
 	public void converterBaseParaPonto(){
 		for (int i = 0; i < this.getBaseEntrada().size(); i++) {

@@ -3,7 +3,7 @@ package kmeans;
 public class AuxiliaryFunctions {
 	
 	/*
-	 * Distancia euclidiana de 4 dimensões entre pontos
+	 * Euclidean distance in 4 dimensions between Ponto
 	 */
 	public static double calculateEuclideanDistance4Dimensions(Ponto v, Ponto w){
 		double result = Math.sqrt(Math.pow((w.getX() - v.getX()),2) + Math.pow((w.getY() - v.getY()),2) +
@@ -12,7 +12,7 @@ public class AuxiliaryFunctions {
 	}
 	
 	/*
-	 * Distancia euclidianda de 4 dimensões entre um ponto e um Cluster
+	 * Eucliadean distance in 4 dimensions between Ponto and Cluster
 	 */
 	public static double calculateEuclideanDistance4Dimensions(Ponto v, Cluster c){
 		double result = Math.sqrt(Math.pow((c.getCenter().getX() - v.getX()),2) + Math.pow((c.getCenter().getY() - v.getY()),2) +
@@ -21,8 +21,7 @@ public class AuxiliaryFunctions {
 	}
 	
 	/*
-	 * Formula de calculo dos pesos entre camada de entrada e intermediaria 
-	 * da RBF a ser usada após o Kmeans
+	 * Calculates RBF weights between input and intermediate layers
 	 */
 	public static double calculateRBFWeights(Ponto centro,Ponto p,double varianca ){
 		return Math.exp(-Math.pow(calculateEuclideanDistance4Dimensions(centro,p),2)/2* (Math.pow(varianca,2)));

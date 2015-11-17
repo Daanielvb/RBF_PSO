@@ -83,18 +83,16 @@ public class Kmeans {
 				}
 		}
 		
-	// Loops until clusters are correctly placed
-	
-		/*
-		 * Deverá fazer todo o procedimento do main
-		 */
+	/*
+	 * When kmeans object is created the whole algorithm starts
+	 */
 	public void kmeans(int k,ArrayList<Ponto> db) throws FileNotFoundException{
 		
 		this.setDatabase(db);
 		this.generateKClusters(k);
 		boolean flag = true;
 		
-		//Processamento do kmeans
+		//kmeans computing
 		while (flag)
 		{
 			this.calculateRelativeDistances();
@@ -107,13 +105,16 @@ public class Kmeans {
 			}
 		}
 		
-		//Calculo da variancia
+		//Variance
 		for (int i = 0; i < this.getClusters().size(); i++) {
 			this.getClusters().get(i).calculateVariance();
 			
 		}
 	}
 	
+	/*
+	 * Prints clusters centers and variance
+	 */
 	public String printAllClustersCenter()
 	{
 		String str = "";
