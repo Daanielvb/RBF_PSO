@@ -1,0 +1,9 @@
+Referencias pro artigo LATEX:
+
+PSO:
+
+http://www.swarmintelligence.org/tutorials.php
+http://www.swarmintelligence.org/papers/cPSOTutorial.pdf
+http://www.researchgate.net/post/How_do_attraction_vectors_really_work_in_PSO
+http://neo.lcc.uma.es/software/mallba/pso.php
+http://researchbank.swinburne.edu.au/vital/access/services/Download/swin:11273/SOURCE1
