@@ -12,7 +12,7 @@ public class Ponto {
 		
 		// Constructor 
 		
-		Ponto(double x,double y,double z,double w){
+		public Ponto(double x,double y,double z,double w){
 			this.x = x;
 			this.y = y;
 			this.z = z;
