@@ -24,7 +24,7 @@ public class LeitorEntradaRBF {
 		BufferedReader br = null;
 		try {
 			String sCurrentLine;
-			br = new BufferedReader(new FileReader("testaIris.txt"));
+			br = new BufferedReader(new FileReader("TreinaIris.txt"));
 			while ((sCurrentLine = br.readLine()) != null) {
 				// parts representa uma linha da base [d,d,d,d,c]
 				String[] parts = sCurrentLine.split("\t");

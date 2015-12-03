@@ -14,12 +14,16 @@ public class TestClass {
 		Kmeans k = new Kmeans();
 		k.kmeans(4, le.getConjuntoCaracteristicas());
 		RBF rbf = new RBF(k,le);
-		Particula p = new Particula(4);
-		rbf.calculateErrorPercentage(p, 4);
+		for (int i = 0; i < 15; i++) {
+			Particula p = new Particula(4);
+			System.out.println(rbf.calculateErrorPercentage(p, 4));
+		}
 		
 		
+//		
 		
-	//	System.out.println(rbf.getLeitorEntrada().getConjuntoCaracteristicas().size());
+		
+		System.out.println(rbf.getLeitorEntrada().getConjuntoCaracteristicas().size());
 
 	}
 

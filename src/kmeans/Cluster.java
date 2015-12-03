@@ -11,8 +11,8 @@ public class Cluster {
 	
 	
 
-	public Cluster(ArrayList <Ponto> ar){
-		int index = (int)(Math.random()*150);
+	public Cluster(ArrayList <Ponto> ar,int size){
+		int index = (int)(Math.random()*size);
 		Ponto pt = ar.get(index);
 		
 		this.center = pt;

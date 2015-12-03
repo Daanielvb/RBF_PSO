@@ -27,7 +27,7 @@ public class Kmeans {
 	
 	public void generateKClusters(int k){
 		for (int i = 0; i < k; i++){
-			this.clusters.add(new Cluster(this.database));
+			this.clusters.add(new Cluster(this.database,this.database.size()));
 		}
 	}
 
