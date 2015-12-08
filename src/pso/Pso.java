@@ -55,49 +55,56 @@ import java.util.ArrayList;
  */
 public class Pso {
 
-	public static float gBest; // Melhor valor (fitness/solucao) do enxame.
-	public static Particula particulaVencedora;
-	private static ArrayList<Particula> particulas;
+	public static Particula gBest; // Particula com melhor fitness do enxame (posicao e fitness guardados)
+	public static ArrayList<Particula> enxame;
 
 	private static void criaEnxame(int numParticulas, int numNeuronios) {
-		particulas = new ArrayList<Particula>();
+		enxame = new ArrayList<Particula>();
 		// cria um enxame com n particulas (definido pelo usuario; geralmente
 		// entre 20 e 50) que sao d-dimensionais (definido pelo numero de
 		// neurinios da camada escondida da rbf).
 		for (int i = 0; i < numParticulas; i++) {
-			Particula p = new Particula(numNeuronios); // ja com a posicao
-			// aleatoria
-			particulas.add(p);
+			Particula p = new Particula(numNeuronios); // ja com a posicao aleatoria
+			enxame.add(p);
 		}
 	}
 
-	public static void defineVencedor(int i) {
-		particulaVencedora = particulas.get(i);
-	}
-
-	public static void defineMelhorGlobal() { // auto-explicativo
-		gBest = particulas.get(0).pBest;
-		for (int i = 0; i < particulas.size(); i++) {
-			if (particulas.get(i).pBest > gBest) {
-				gBest = particulas.get(i).pBest;
-				defineVencedor(i); // define a particula vencedora
+	public static void define_gBest() { // define quem eh a particula gBest e guarda uma copia
+		for (int i = 0; i < enxame.size(); i++) {
+			if (enxame.get(i).fitness < gBest.fitness) {
+				gBest = new Particula(enxame.size());
+				gBest.posicao = enxame.get(i).posicao.clone();
+				gBest.fitness = enxame.get(i).fitness;
 			}
 		}
 	}
+	
+	public static void define_pBest(Particula p, int numNeuronios){
+		if (p.fitness < p.pBest.fitness) {
+			p.pBest = new Particula(numNeuronios);
+			p.pBest.posicao = p.posicao.clone();
+			p.pBest.fitness = p.fitness;
+		}
+	}
 
-	public Pso(int numIteracoes, int numParticulas, int numNeuronios) {
+	public Pso(int numNeuronios, int numEpocas, int numParticulas) {
 		criaEnxame(numParticulas, numNeuronios);
-		for (int i = 0; i < numIteracoes; i++) {
-			for (int j = 0; j < particulas.size(); j++) {
-				Particula.calculaFitness();
-				particulas.get(j).pBest = (particulas.get(j).pBest < particulas.get(j).fitness)
-						? particulas.get(j).fitness : particulas.get(j).pBest;
+		gBest = enxame.get(0);
+		for (int i = 0; i < numEpocas; i++) {
+			for (int j = 0; j < enxame.size(); j++) {
+				enxame.get(j).fitness = rbf.RBF.calculateErrorPercentage(enxame.get(j), numNeuronios); // calcula o fitness da particula
+				define_pBest(enxame.get(j), numNeuronios);
 			}
-			defineMelhorGlobal();
-			for (int j = 0; j < particulas.size(); j++) {
-				particulas.get(j).calculaVelocidade();
-				particulas.get(j).deslocarParticula();
+			define_gBest();
+			for (int j = 0; j < enxame.size(); j++) {
+				enxame.get(j).calculaVelocidade();
+				enxame.get(j).deslocarParticula();
 			}
 		}
+	}
+	
+	public Particula FuncaoGeral(int numNeuronios, int numEpocas, int numParticulas) {
+		Pso abelhas = new Pso(numNeuronios, numEpocas, numParticulas);
+		return gBest;
 	}
 }

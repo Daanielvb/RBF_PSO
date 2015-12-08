@@ -1,0 +1,88 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{cvpr}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+
+\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+\cvprfinalcopy
+
+\def\cvprPaperID{****}
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+
+\setcounter{page}{1}
+\begin{document}
+
+\title{Utilização do algoritmo PSO para ajuste dos pesos em redes RBF}
+
+\author{Daniel Vilas-Boas\\
+DEINFO\\
+UFRPE\\
+{\tt\small daanielvb@gmail.com}
+\and
+Leonardo Figueiroa\\
+DEINFO\\
+UFRPE\\
+{\tt\small leonardofigueiroa@live.com}
+\and
+Rodrigo Cunha\\
+DEINFO\\
+UFRPE\\
+{\tt\small r-cunha@outlook.com}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+\begin{abstract}
+O uso de redes neurais de base radial (RBFs) vem sendo bastante utilizadas para classificação de padrões por apresentar diversas vantagens sobre outras redes, como MLP, apresentando um treinamento mais eficiente e melhor grau de separabilidade. Este trabalho envolveu o desenvolvimento de uma (RBF) em conjunto com o algoritmo de otimização por enxame de partículas (PSO), a rede neural foi desenvolvida de forma que seus pesos de saída fossem ajustados pelo PSO visando obter os melhores pesos na camada de saída e consequentemente menor taxa de erro e melhor classificação das características de entrada.
+\end{abstract}
+
+\section{Introdução}
+As redes denominadas funções de base radial, convencionalmente conhecidas como RBF (radial basis function), são usadas em variados tipos de problemas tais como, aproximação de funções e classificação de padrões. Ela pertence a arquitetura feedfoward de camas múltiplas, cujo treinamento é efetivado de forma supervisionada. Sua estrutura é composta tipicamente por apenas uma camada intermediária, na qual as funções de ativação são do tipo gaussiana. O fluxo de informações tem início na camada de entrada, passando então pela respectiva camada intermediária, e finalizando na camada neural de saída com neurônios com funções de ativação linear. \\
+
+O PSO (Particle Swarm Optimization) é um algoritmo de otimização por enxame de partículas. Tem uma abordagem estocástica, baseada em população que simula o processo comportamental de interação entre os indivíduos de um grupo. Sua teoria é baseada em comportamento de atividades de grupos de animais como pássaros e peixes, que realizam tarefas de otimização na execução de atividades como a busca por alimentos. O PSO se inicia com um enxame espalhados de partículas, e cada partícula é dito ser uma possível solução para o problema investigado, sendo atribuído a cada indivíduo um valor que está relacionado a adequação da partícula com a solução do problema, denominada fitness, e também uma variável velocidade que representa a direção do movimento da partícula. Com o passar do tempo, as partículas vão ajustando suas velocidades em relação a seu melhor fitness, encontrada pela própria partícula e também pela melhor solução do grupo de partículas, e continuam realizando este processo até que encontrem melhor solução. O valor fitness é definido pela natureza do problema de otimização e é computada por uma função objetivo que avalia um vetor solução. \\
+
+Neste artigo, é implementado a rede neural RBF em conjunto com o algoritmo de otimização PSO, com intuito de otimizar a taxa de acerto da RBF.
+
+
+%-------------------------------------------------------------------------
+\subsection{Métodos Desenvolvidos}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius bibendum urna, id facilisis ligula. Integer ante dui, commodo ut velit vitae, vehicula elementum nibh. Sed tempor, est vitae auctor scelerisque, augue ex porttitor arcu, vitae consequat quam odio ac nisi. Ut malesuada sodales ante sit amet gravida. Curabitur tristique aliquet lacus, ac pellentesque leo. Phasellus non orci id dolor tristique consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tristique neque mollis dui eleifend dictum. Sed gravida nunc arcu, sit amet viverra eros elementum at. Donec vitae nunc metus. Ut ut enim eget metus egestas luctus et sed tortor. Fusce consectetur dolor ac iaculis lobortis. Mauris eget ante id ligula ullamcorper congue eu vitae turpis. Proin tempus vel leo a sodales.
+
+\subsection{QUALQUER COISA 1}
+
+Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
+
+\subsection{QUALQUER COISA 2}
+Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
+
+Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
+
+%-------------------------------------------------------------------------
+
+\section{Experimentos}
+
+\subsection{QUALQUER COISA 3}
+Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
+
+Nullam pulvinar nunc nec interdum sodales. Cras elit erat, gravida id tortor eu, molestie volutpat felis. Duis quis ipsum sapien. Etiam nec porttitor est. Vestibulum neque leo, sagittis id interdum vitae, congue a mi. Vestibulum interdum ipsum id viverra egestas. Suspendisse iaculis turpis nibh, a viverra dolor tempor eget. Donec volutpat, sapien a auctor venenatis, justo enim gravida nisi, vitae laoreet ipsum ligula sit amet mauris. Proin rhoncus auctor lectus, in dignissim elit.
+
+\section{Conclusão}
+
+Nullam pulvinar nunc nec interdum sodales. Cras elit erat, gravida id tortor eu, molestie volutpat felis. Duis quis ipsum sapien. Etiam nec porttitor est. Vestibulum neque leo, sagittis id interdum vitae, congue a mi. Vestibulum interdum ipsum id viverra egestas. Suspendisse iaculis turpis nibh, a viverra dolor tempor eget. Donec volutpat, sapien a auctor venenatis, justo enim gravida nisi, vitae laoreet ipsum ligula sit amet mauris. Proin rhoncus auctor lectus, in dignissim elit.
+
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{egbib}
+}
+
+\end{document}
