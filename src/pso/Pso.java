@@ -103,8 +103,8 @@ public class Pso {
 		}
 	}
 	
-	public Particula FuncaoGeral(int numNeuronios, int numEpocas, int numParticulas) {
+	public static Particula FuncaoGeral(int numNeuronios, int numEpocas, int numParticulas) {
 		Pso abelhas = new Pso(numNeuronios, numEpocas, numParticulas);
-		return gBest;
+		return abelhas.gBest;
 	}
 }

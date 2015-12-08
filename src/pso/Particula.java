@@ -16,7 +16,7 @@ public class Particula {
 		for (int i = 0; i < posicao.length; i++) { 
 			Random numRandom = new Random(); // preenche aleatoriamente o vetor de coordenadas d-dimensional da particula
 			posicao[i] = (numRandom.nextDouble() * 2) - 1; // intervalo [-1, 1]
-			velocidade[i] = 0;
+			velocidade[i] = numRandom.nextDouble() * 10;
 		}
 	}
 	

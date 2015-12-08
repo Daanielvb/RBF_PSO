@@ -12,10 +12,12 @@ import pso.Particula;
 public class RBF {
 	private static List<Cluster> rbfs;
 	private static LeitorEntradaRBF leitorEntrada;
+	static int contador = 0;
 
 	public RBF(Kmeans k, LeitorEntradaRBF leitor) {
 		this.rbfs = k.getClusters();
 		this.leitorEntrada = leitor;
+		
 	}
 
 	/*
@@ -38,8 +40,15 @@ public class RBF {
 				somatorio += p.posicao[z] * Y.get(z);
 			}
 			erro += Math.abs(getLeitorEntrada().getBaseEntrada().get(j).get(4) - somatorio);
+			// System.out.println("erro antes do return: " + erro);
 		}
-		return erro / getLeitorEntrada().getBaseEntrada().size();
+		//contador++;
+		
+		erro = erro / getLeitorEntrada().getBaseEntrada().size();
+		System.out.println("erro depois do return: " + erro);
+		//System.out.println(contador);
+		//return erro / getLeitorEntrada().getBaseEntrada().size();
+		return erro;
 	}
 
 	public static List<Cluster> getRbfs() {
