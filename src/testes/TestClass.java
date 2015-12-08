@@ -1,9 +1,11 @@
-package rbf;
+package testes;
 
 import java.io.FileNotFoundException;
 
 import kmeans.Kmeans;
 import pso.Particula;
+import rbf.LeitorEntradaRBF;
+import rbf.RBF;
 
 public class TestClass {
 

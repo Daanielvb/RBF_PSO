@@ -37,7 +37,7 @@ public class RBF {
 			// Somatorio das multiplicacoes de Y x W
 			double somatorio = 0;
 			for (int z = 0; z < Y.size(); z++) {
-				somatorio += p.posicao[z] * Y.get(z);
+				somatorio += p.getPosicao()[z] * Y.get(z);
 			}
 			erro += Math.abs(getLeitorEntrada().getBaseEntrada().get(j).get(4) - somatorio);
 			// System.out.println("erro antes do return: " + erro);
@@ -45,7 +45,7 @@ public class RBF {
 		//contador++;
 		
 		erro = erro / getLeitorEntrada().getBaseEntrada().size();
-		System.out.println("erro depois do return: " + erro);
+		//System.out.println("erro depois do return: " + erro);
 		//System.out.println(contador);
 		//return erro / getLeitorEntrada().getBaseEntrada().size();
 		return erro;
