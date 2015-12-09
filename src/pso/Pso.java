@@ -63,7 +63,9 @@ public class Pso {
 	
 	public Pso(int numNeuronios, int numEpocas, int numParticulas) {
 		criaEnxame(numParticulas, numNeuronios);
-		gBest = enxame.get(0);
+		gBest = new Particula(numNeuronios);
+		gBest.setFitness(enxame.get(0).getFitness());
+		gBest.setPosicao(enxame.get(0).getPosicao().clone());
 		System.out.println(Arrays.toString(gBest.getPosicao()));
 		for (int i = 0; i < enxame.size(); i++) {
 			enxame.get(i).setpBest(enxame.get(i));
@@ -72,7 +74,7 @@ public class Pso {
 		for (int i = 0; i < numEpocas; i++) {
 			for (int j = 0; j < this.enxame.size(); j++) {
 				this.enxame.get(j).setFitness(rbf.RBF.calculateErrorPercentage(this.enxame.get(j), numNeuronios)); // calcula o fitness da particula
-				define_pBest(this.enxame.get(j), numNeuronios);
+				define_pBest(this.enxame.get(j));
 			}
 			define_gBest();
 			for (int j = 0; j < this.enxame.size(); j++) {
@@ -106,29 +108,23 @@ public class Pso {
 	public void define_gBest() { // define quem eh a particula gBest e guarda uma copia
 		for (int i = 0; i < this.enxame.size(); i++) {
 			if (this.enxame.get(i).getFitness() < gBest.getFitness()) {
-				//gBest = new Particula(this.enxame.size());
 				gBest.setPosicao(this.enxame.get(i).getPosicao().clone());
 				gBest.setFitness(this.enxame.get(i).getFitness());
-				gBest.setVelocidade(this.enxame.get(i).getVelocidade().clone());
+				System.out.println("Trocou gBest");
+				System.out.println(gBest.getFitness());
 				System.out.println(Arrays.toString(gBest.getPosicao()));
 				
 			}
 		}
 	}
 	
-	public void define_pBest(Particula p, int numNeuronios){
+	public void define_pBest(Particula p){
 		if (p.getFitness() < p.getpBest().getFitness()) {
-			p.setpBest(new Particula(numNeuronios));
 			p.getpBest().setPosicao(p.getPosicao().clone());
 			p.getpBest().setFitness(p.getFitness());
-			p.getpBest().setVelocidade(p.getVelocidade().clone());
+			System.out.println("Trocou pBest");
 		}
 	}
-	
-	/*public Particula FuncaoGeral(int numNeuronios, int numEpocas, int numParticulas) {
-		Pso abelhas = new Pso(numNeuronios, numEpocas, numParticulas);
-		return abelhas.gBest;
-	}*/
 
 	public ArrayList<Particula> getEnxame() {
 		return enxame;

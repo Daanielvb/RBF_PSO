@@ -15,7 +15,7 @@ public class Particula {
 		
 		this.posicao = new double[numNeuronios];
 		this.velocidade = new double[numNeuronios];
-		this.fitness = -1; // ja que a taxa de erro pode estar entre 0 e 2. necessario inicializar assim por causa da primeira comparacao do metodo define_pBest.
+		this.fitness = 3; // ja que a taxa de erro pode estar entre 0 e 2. necessario inicializar assim por causa da primeira comparacao do metodo define_pBest.
 		for (int i = 0; i < this.posicao.length; i++) { 
 			Random numRandom = new Random(); // preenche aleatoriamente o vetor de coordenadas d-dimensional da particula
 			this.posicao[i] = (numRandom.nextDouble() * 2) - 1; // intervalo [-1, 1]
@@ -32,12 +32,12 @@ public class Particula {
 		double[] d_pBest = new double [this.posicao.length]; // vetor pBest
 		double[] d_gBest = new double [this.posicao.length]; // vetor gBest
 		
-		//decidi fazer varios lacos for somente para melhorar a legibilidade da equacao
+		//decidi fazer varios lacos for para melhorar a legibilidade da equacao
 		
 		for (int i = 0; i < d_pBest.length; i++) { // subtrai os vetores pBest e posicao utilizando o metodo do triangulo e multiplica pelo fator de aprendizado c1
-			d_pBest[i] = posicao[i] * (-1);
-			d_pBest[i] += pBest.posicao[i];
-			d_pBest[i] += c1;
+			d_pBest[i] = this.posicao[i] * (-1);
+			d_pBest[i] = d_pBest[i] + pBest.getPosicao()[i];
+			d_pBest[i] = d_pBest[i] + c1;
 		}
 		
 		for (int i = 0; i < d_gBest.length; i++) { // subtrai os vetores gBest e posicao utilizando o metodo do triangulo e multiplica pelo fator de aprendizado c2

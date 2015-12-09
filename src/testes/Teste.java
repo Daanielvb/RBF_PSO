@@ -34,8 +34,7 @@ public class Teste {
 			Pso pso = new Pso(4, 100, 25);
 			
 			//System.out.println(pso.gBest.getFitness());
-			System.out.println(Arrays.toString(pso.gBest.getPosicao()));
-			System.out.println(Arrays.toString(pso.gBest.getVelocidade()));
+			//System.out.println(Arrays.toString(pso.gBest.getPosicao()));
 
 		}
 
