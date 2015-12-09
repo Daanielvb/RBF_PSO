@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.6)  9 DEC 2015 03:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.12.6)  9 DEC 2015 12:18
 entering extended mode
 **RBF-PSO.tex
 (RBF-PSO.tex
@@ -458,19 +458,19 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 Package: spverbatim 2009/08/10 v1.0 Verbatim with breakable spaces
 )
 (RBF-PSO.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -499,53 +499,59 @@ Package color Info: Driver file: pdftex.def on input line 142.
 )
 \c@lstlisting=\count123
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 44.
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 45.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 47.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 49--50
 
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 50.
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 51.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 57.
 
-Underfull \hbox (badness 1127) in paragraph at lines 56--57
+Underfull \hbox (badness 1127) in paragraph at lines 57--58
 \OT1/ptm/m/n/10 cujo treina-mento []e efe-ti-vado de forma su-per-vi-sion-ada.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
 
-Underfull \hbox (badness 1701) in paragraph at lines 58--59
+Underfull \hbox (badness 1701) in paragraph at lines 59--60
 \OT1/ptm/m/n/10 com a solu[][]ao do prob-lema (de-nom-i-nada \OT1/ptm/b/n/10 fi
 t-ness\OT1/ptm/m/n/10 ), e,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
+ []
+
+
+Underfull \hbox (badness 1137) in paragraph at lines 70--71
+\OT1/ptm/m/n/10 das amostras, cal-cu-lando $\OML/cmm/m/it/10 n$ \OT1/ptm/m/n/10
+ cen-tros e suas re-spec-ti-vas
  []
 
 [1{C:/Users/leona/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
@@ -555,77 +561,237 @@ Underfull \hbox (badness 10000) in paragraph at lines 58--59
 <foto1.jpg, id=10, 625.33624pt x 508.90125pt>
 File: foto1.jpg Graphic file (type jpg)
  <use foto1.jpg>
-Package pdftex.def Info: foto1.jpg used on input line 75.
+Package pdftex.def Info: foto1.jpg used on input line 82.
 (pdftex.def)             Requested size: 187.60231pt x 152.67155pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 82--83
-
- []
-
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 84.
-
-[2 <./foto1.jpg>] (RBF-PSO.bbl) [3
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
+ [2 <./foto1.jpg>] (RBF-PSO.bbl) [3]
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
 []\OT1/pcr/m/n/10 double[] result[] =[] Math.sqrt(Math.pow((w.getX()[] -[] v.ge
 tX()),2)[] +[] Math.pow((w.getY()[] -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
 []\OT1/pcr/m/n/10 double[] result[] =[] Math.sqrt(Math.pow((c.getCenter().getX(
 )[] -[] v.getX()),2)[] +[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
 []\OT1/pcr/m/n/10 Math.pow((c.getCenter().getZ()[] -[] v.getZ()),2)[] +[] Math.
 pow((c.getCenter().getW()[] -[]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--167
+Underfull \hbox (badness 10000) in paragraph at lines 185--185
 []\OT1/pcr/m/n/10 return[] Math.exp(-Math.pow(calculateEuclideanDistance4Dimens
 ions(centro,p),2)/2*[]
  []
 
 [4
 
-] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 278--278
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 10000) in paragraph at lines 294--294
 []\OT1/pcr/m/n/10 sum[] +=[] AuxiliaryFunctions.calculateEuclideanDistance4Dime
 nsions(this.getCenter(),[]
+ []
+
+[6]
+Overfull \hbox (1.14375pt too wide) in paragraph at lines 456--456
+[]\OT1/pcr/m/n/10 calculateEuclideanDistance4Dimensions(this.database.get(i),[]
+ this.clusters.get(j)));[] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6]
-[7] (RBF-PSO.aux) )
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+[9]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 private[] Particula[] pBest;[] //[] melhor[] solucao[] ja[] e
+ncontrada[] pela[] particula[] (posicao[] e[]
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 this.fitness[] =[] 3;[] //[] ja[] que[] a[] taxa[] de[] erro[
+] pode[] estar[] entre[] 0[] e[] 2.[] necessario[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 Random[] numRandom[] =[] new[] Random();[] //[] preenche[] al
+eatoriamente[] o[] vetor[] de[] coordenadas[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 //[] da[] equacao[] v[][] =[] v[][] +[] c1[] *[] rand()[] *[]
+ (pbest[][] -[] present[])[] +[] c2[] *[] rand()[] *[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 for[] (int[] i[] =[] 0;[] i[] <[] d_pBest.length;[] i++)[] {[
+] //[] subtrai[] os[] vetores[] pBest[] e[] posicao[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 for[] (int[] i[] =[] 0;[] i[] <[] d_gBest.length;[] i++)[] {[
+] //[] subtrai[] os[] vetores[] gBest[] e[] posicao[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 for[] (int[] i[] =[] 0;[] i[] <[] d_pBest.length;[] i++)[] {[
+] //[] soma[] os[] vetores[] d_pBest[] e[] d_gBest[] e[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]\OT1/pcr/m/n/10 for[] (int[] i[] =[] 0;[] i[] <[] this.velocidade.length;[] i
+++)[] {[] //[] finalmente,[] soma[] os[] vetores[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\OT1/pcr/m/n/10 /*[] PSO:[] tecnica[] de[] otimizacao[] do[] tipo[] estocasti
+ca[] (aleatoria)[] inspirada[] no[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] de[] .[] Possui[] muitas[] similaridades[] com[] tecni
+cas[] de[] evolucao[] computacional,[] como[]
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] O[] PSO[] possui[] uma[] populacao[] (enxame)[] de[] s
+olucoes[] candidatas[] (as[] particulas).[] As[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] movem-se[] no[] espaco[] de[] busca[] de[] acordo[] co
+m[] algumas[] formulas[] simples.[] Os[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] ticulas[] sao[] guiados[] pela[] sua[] melhor[] posica
+o[] conhecida[] no[] espaco[] de[] busca,[] assim[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] posicao[] conhecida[] do[] enxame.[] O[] pocesso[] e[]
+ repetido[] e,[] e[] esperado,[] mas[] nao[]
+ []
+
+
+Overfull \hbox (79.14375pt too wide) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] ------------------------------------------------------
+---------------------------------------[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 * [] [] [] [] If[] the[] fitness[] value[] is[] better[] t
+han[] the[] best[] fitness[] value[] (pBest)[] in[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 * Choose[] the[] particle[] with[] the[] best[] fitness[] 
+value[] of[] all[] the[] particles[] as[] the[]
+ []
+
+
+Overfull \hbox (79.14375pt too wide) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[] ------------------------------------------------------
+---------------------------------------[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[][] \OT1/pcr/m/n/10 *[]  v[][] =[] v[][] +[] c1[] *[] rand()[] *[] (pbest[][] 
+-[] present[])[] +[] c2[] *[] rand()[] *[] (gbest[][] -[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\OT1/pcr/m/n/10 public[] static[] Particula[] gBest;[] //[] Particula[] com[]
+ melhor[] fitness[] do[] enxame[] (posicao[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\OT1/pcr/m/n/10 this.enxame.get(j).setFitness(rbf.RBF.calculateErrorPercentag
+e(this.enxame.get(j),[]
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+Underfull \hbox (badness 10000) in paragraph at lines 809--809
+[]\OT1/pcr/m/n/10 public[] void[] define_gBest()[] {[] //[] define[] quem[] eh[
+] a[] particula[] gBest[] e[] guarda[] uma[]
+ []
+
+[16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+[18] [19]
+Underfull \hbox (badness 10000) in paragraph at lines 1064--1064
+[]\OT1/pcr/m/n/10 k.kmeans(4,[] le.getConjuntoCaracteristicas());[] //[] primei
+ro[] argumento[] deve[] ser[] igual[]
+ []
+
+[20] [21] (RBF-PSO.aux) )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 5149 strings out of 493673
- 70505 string characters out of 3141530
- 156122 words of memory out of 3000000
- 8410 multiletter control sequences out of 15000+200000
- 29077 words of font info for 62 fonts, out of 3000000 for 9000
+ 5162 strings out of 493673
+ 70633 string characters out of 3141530
+ 157131 words of memory out of 3000000
+ 8421 multiletter control sequences out of 15000+200000
+ 30776 words of font info for 70 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 34i,19n,32p,1341b,2153s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,19n,32p,1341b,2155s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.
-enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/urw/times/utmri8a.pfb>
-Output written on RBF-PSO.pdf (7 pages, 120801 bytes).
+enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Progra
+m Files (x86)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (
+x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/urw/times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on RBF-PSO.pdf (21 pages, 189808 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
+ 112 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
