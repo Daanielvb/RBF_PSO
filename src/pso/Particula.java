@@ -5,10 +5,10 @@ import java.util.Random;
 
 public class Particula {
 
-	private double fitness; // solucao encontrada (taxa de erro medio da RBF)
-	private Particula pBest; // melhor solucao ja encontrada pela particula (posicao e fitness guardados)
-	private double[] posicao;
-	private double[] velocidade;
+	public double fitness; // solucao encontrada (taxa de erro medio da RBF)
+	public Particula pBest; // melhor solucao ja encontrada pela particula (posicao e fitness guardados)
+	public double[] posicao;
+	public double[] velocidade;
 	
 
 	public Particula(int numNeuronios) { //construtor
@@ -79,8 +79,11 @@ public class Particula {
 		return pBest;
 	}
 
-	public void setpBest(Particula pBest) {
-		this.pBest = pBest;
+	public void setpBest(Particula pBest, int numNeuronios) {
+		this.pBest = new Particula(numNeuronios);
+		this.pBest.fitness = pBest.fitness;
+		this.pBest.posicao = pBest.posicao.clone();
+		this.pBest.velocidade = pBest.velocidade.clone();
 	}
 
 	public double[] getPosicao() {
@@ -88,7 +91,7 @@ public class Particula {
 	}
 
 	public void setPosicao(double[] posicao) {
-		this.posicao = posicao;
+		this.posicao = posicao.clone();
 	}
 
 	public double[] getVelocidade() {
@@ -96,6 +99,6 @@ public class Particula {
 	}
 
 	public void setVelocidade(double[] velocidade) {
-		this.velocidade = velocidade;
+		this.velocidade = velocidade.clone();
 	}
 }

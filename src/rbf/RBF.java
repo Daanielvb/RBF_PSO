@@ -26,6 +26,7 @@ public class RBF {
 	 */
 	public static double calculateErrorPercentage(Particula p, int numNeuronios) {
 		double erro = 0;
+		//System.out.println("zerou o erro");
 		for (int j = 0; j < getLeitorEntrada().getConjuntoCaracteristicas().size(); j++) {
 			// Array com valores temporarios de Y
 			ArrayList<Double> Y = new ArrayList<Double>();
@@ -34,6 +35,7 @@ public class RBF {
 						getLeitorEntrada().getConjuntoCaracteristicas().get(j),
 						getRbfs().get(i).getVariance()));
 			}
+			//System.out.println(Y.toString());
 			// Somatorio das multiplicacoes de Y x W
 			double somatorio = 0;
 			for (int z = 0; z < Y.size(); z++) {

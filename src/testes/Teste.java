@@ -16,7 +16,7 @@ public class Teste {
 			le.lerEntrada();
 			le.converterBaseParaPonto();
 			Kmeans k = new Kmeans();
-			k.kmeans(4, le.getConjuntoCaracteristicas()); // primeiro argumento deve ser igual ao numNeuronios
+			k.kmeans(5, le.getConjuntoCaracteristicas()); // primeiro argumento deve ser igual ao numNeuronios
 			RBF rbf = new RBF(k, le);
 			
 			/*for (int i = 0; i < 15; i++) {
@@ -24,18 +24,25 @@ public class Teste {
 				//System.out.println(rbf.calculateErrorPercentage(p, 4));
 			}*/
 			
-			//System.out.println(Pso.FuncaoGeral(4, 10, 20));
-			/*System.out.println(Arrays.toString(Pso.FuncaoGeral(1, 2, 1).posicao));
-			System.out.println(Pso.gBest.fitness);
-			System.out.println(Arrays.toString(Pso.gBest.posicao));
-			System.out.println(Arrays.toString(Pso.gBest.velocidade));
-			System.out.println(Pso.gBest);*/
-			
-			Pso pso = new Pso(4, 100, 25);
-			
+			Pso pso = new Pso(5, 10, 20);
 			//System.out.println(pso.gBest.getFitness());
 			//System.out.println(Arrays.toString(pso.gBest.getPosicao()));
-
+			//System.out.println(Arrays.toString(pso.gBest.getVelocidade()));
+			
+			int counter = 0;
+			for (int i = 0; i < pso.getEnxame().size(); i++) {
+			
+			System.out.println(pso.getEnxame().get(i).getFitness());
+			System.out.println(Arrays.toString(pso.getEnxame().get(i).getPosicao()));
+			System.out.println(Arrays.toString(pso.getEnxame().get(i).getVelocidade()));
+			
+			System.out.println("\n");
+			counter++;
+			}
+			System.out.println(counter);
+			System.out.println("Melhor Particula gBest: \n");
+			System.out.println(Pso.gBest.fitness);
+			System.out.println(Arrays.toString(Pso.gBest.posicao));
 		}
 
 	}

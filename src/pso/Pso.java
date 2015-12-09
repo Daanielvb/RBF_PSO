@@ -57,18 +57,18 @@ import java.util.Arrays;
 public class Pso {
 
 	public static Particula gBest; // Particula com melhor fitness do enxame (posicao e fitness guardados)
-	private ArrayList<Particula> enxame;
-	private final double v_min = -2;
-	private final double v_max = 2;
+	public ArrayList<Particula> enxame;
+	private final double v_min = -1;
+	private final double v_max = 1;
 	
 	public Pso(int numNeuronios, int numEpocas, int numParticulas) {
 		criaEnxame(numParticulas, numNeuronios);
 		gBest = new Particula(numNeuronios);
 		gBest.setFitness(enxame.get(0).getFitness());
 		gBest.setPosicao(enxame.get(0).getPosicao().clone());
-		System.out.println(Arrays.toString(gBest.getPosicao()));
+		//System.out.println(Arrays.toString(gBest.getPosicao()));
 		for (int i = 0; i < enxame.size(); i++) {
-			enxame.get(i).setpBest(enxame.get(i));
+			enxame.get(i).setpBest(enxame.get(i), numNeuronios);
 		}
 		
 		for (int i = 0; i < numEpocas; i++) {
@@ -110,9 +110,9 @@ public class Pso {
 			if (this.enxame.get(i).getFitness() < gBest.getFitness()) {
 				gBest.setPosicao(this.enxame.get(i).getPosicao().clone());
 				gBest.setFitness(this.enxame.get(i).getFitness());
-				System.out.println("Trocou gBest");
-				System.out.println(gBest.getFitness());
-				System.out.println(Arrays.toString(gBest.getPosicao()));
+				//System.out.println("Trocou gBest");
+				//System.out.println(gBest.getFitness());
+				//System.out.println(Arrays.toString(gBest.getPosicao()));
 				
 			}
 		}
@@ -122,7 +122,7 @@ public class Pso {
 		if (p.getFitness() < p.getpBest().getFitness()) {
 			p.getpBest().setPosicao(p.getPosicao().clone());
 			p.getpBest().setFitness(p.getFitness());
-			System.out.println("Trocou pBest");
+			//System.out.println("Trocou pBest");
 		}
 	}
 
