@@ -6,6 +6,16 @@ I.~N. da~Silva.
   Aplicadas}.
 \newblock Artiliber, first edition, 2010.
 
+\bibitem{artigo}
+A.~R. Gonçalves.
+\newblock Inteligência de enxames.
+\newblock {\em IEEE Congress on Evolutionary Computation}, 2013.
+
+\bibitem{livro2}
+S.~Haykin.
+\newblock {\em Neural Networks - a comprehensive foundation}.
+\newblock Prentice Hall, second edition, 1999.
+
 \bibitem{xiao}
 X.~Hu.
 \newblock Particle swarm optimization.

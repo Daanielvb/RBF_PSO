@@ -13,11 +13,16 @@
 \usepackage{spverbatim}
 \usepackage{graphicx}
 \usepackage{times}
+\usepackage{booktabs}
+\usepackage{caption}
+
+\captionsetup[table]{name=Tabela}
 
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\refname}{Referências}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
 %\renewcommand{\familydefault}{Computer Modern}
-%\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 %\DeclareMathSizes{10}{20}{10}{10}
 
@@ -63,24 +68,23 @@ O uso de redes neurais de base radial ou RBFs vem sendo bastante utilizadas para
 As redes denominadas \textit{funções de base radial}, convencionalmente conhecidas como \textit{RBF (radial basis function)}, são usadas em variados tipos de problemas tais como aproximação de funções e classificação de padrões. Ela pertence a arquitetura \textbf{feedforward} de camas múltiplas, cujo treinamento é efetivado de forma supervisionada. Sua estrutura é composta tipicamente por apenas uma camada intermediária, na qual as funções de ativação são do tipo \textit{gaussiana}. O fluxo de informações tem início na camada de entrada, passando então pela respectiva camada intermediária, e finalizando na camada neural de saída com neurônios com funções de ativação linear~\cite{livroAula}.\\ 
 
 O \textit{PSO (Particle Swarm Optimization)} é um algoritmo de otimização por enxame de partículas. Tem uma abordagem \textbf{estocástica}, baseada em população que simula o processo comportamental de interação entre os indivíduos de um grupo. Sua teoria é baseada em comportamento de atividades de grupos de animais como pássaros e peixes, que realizam tarefas de otimização na execução de atividades como a busca por alimentos. O \textit{PSO} se inicia com um enxame de partículas com posições aleatórias. Cada partícula é dita ser uma possível solução para o problema investigado, sendo atribuído a cada indivíduo (partícula) um valor que está relacionado a adequação da partícula com a solução do problema (denominada \textbf{fitness}), e, também, uma variável velocidade que representa a direção do movimento da partícula. Com o passar do tempo, as partículas vão ajustando suas velocidades em relação a seu melhor \textbf{fitness}, encontrada pela própria partícula, e também pela melhor solução do grupo de partículas.\\ Elas continuam realizando este processo até que encontrem uma solução ótima. O valor \textbf{fitness} é definido pela natureza do problema de otimização e é computada por uma função objetivo que avalia um vetor solução. \\
-
-Neste papel são discutidos a implementação da rede neural \textit{RBF} em conjunto com o algoritmo de otimização \textit{PSO}, os experimentos realizados após a implementação, e os resultados encontrados após os experimentos realizados.
+Neste papel são discutidos a implementação da rede neural \textit{RBF} em conjunto com o algoritmo de otimização \textit{PSO}, os experimentos realizados após a implementação, e os resultados encontrados após os experimentos realizados. Todo o histórico de desenvolvimento do trabalho e código fonte atualizado se encontram disponíveis em \url{https://github.com/Daanielvb/RBF_PSO}
 
 
 %-------------------------------------------------------------------------
 \subsection{Procedimentos}
-Nesta seção serão discutidos os procedimentos realizados pela rede neural e pelo algoritmo de otimização. Os procedimentos são outros algoritmos conhecidos na literatura de \textbf{inteligência artificial} e \textbf{redes neurais artificiais} (como o \textit{kMeans} e a \textit{RBF}). Serão brevemente discutidos como funcionam e o seu papel na implementação do projeto. No \textbf{apêndice} pode ser encontrado o código-fonte do projeto para eventual consulta. O código-fonte está escrito em linguagem \textit{Java}.
+Nesta seção serão discutidos os procedimentos realizados pela rede neural e pelo algoritmo de otimização. Os procedimentos são outros algoritmos conhecidos na literatura de \textbf{inteligência artificial} e \textbf{redes neurais artificiais} (como o \textit{kMeans} e a \textit{RBF}). Serão brevemente discutidos como funcionam e o seu papel na implementação do projeto.
 
 \subsection{kMeans}
 
 O primeiro procedimento realizado foi a \textbf{clusterização} das amostras por meio do algoritmo \textit{kMeans}. A partir de um valor $n$ que representa o número de centros na camada escondida da \textit{RBF} o algoritmo realiza a separação das amostras, calculando $n$ centros e suas respectivas variâncias.
 
 \subsection{Radial Basis Function --- RBF}
-Diferentemente das redes neurais do tipo \textit{MLP}, as redes do tipo \textit{RBF} possuem uma única camada escondida, cujos neurônios são constituídos de \textbf{funções de base radial}. O aprendizado neste tipo de rede é equivalente a encontrar uma superfície no espaço que forneça o melhor ajuste para os dados de treinamento. A estrutura típica de uma rede de função de base radial possui uma cama de entrada que está associada diretamente às informações de entrada da rede, uma única camada escondida constituída por funções de ativação de base radial que realizam uma transformação não-linear do espaço de entrada, e uma camada de saída linear que fornece a resposta ao padrão aplicado nas entradas da rede, conforme a figura abaixo.
+Diferentemente das redes neurais do tipo \textit{MLP}, as redes do tipo \textit{RBF} possuem uma única camada escondida, cujos neurônios são constituídos de \textbf{funções de base radial}. O aprendizado neste tipo de rede é equivalente a encontrar uma superfície no espaço que forneça o melhor ajuste para os dados de treinamento. A estrutura típica de uma rede de função de base radial possui uma cama de entrada que está associada diretamente às informações de entrada da rede, uma única camada escondida constituída por funções de ativação de base radial que realizam uma transformação não-linear do espaço de entrada, e uma camada de saída linear que fornece a resposta ao padrão aplicado nas entradas da rede, conforme a figura abaixo.~\cite{livro2}
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.3]{foto1.jpg}
-\caption{\textit{Estrutura teórica da RBF}}
+\caption{\textit{Estrutura teórica da RBF~\cite{livro2}}}
 \end{center}
 \end{figure}
 Nas redes neurais do tipo \textit{RBF} as informações das funções da camada escondida são determinadas pela distância, normalmente \textit{euclidiana}, entre o vetor de entrada e o centro daquela unidade. Ou seja, as variáveis de entrada constituem os dados utilizados pelas funções de ativação da rede, onde os pesos que conectam as camadas de entrada e escondida podem ser considerados unitários.
@@ -90,14 +94,13 @@ A camada de saída \textbf{não} contém funções de ativação, ela é conside
 
 A partir dos centros das amostras e suas respectivas variâncias é utilizada a \textbf{função de base radial} para determinar o valor de saída da camada intermediária. A fórmula é dada abaixo:
 \begin{equation}
-\Large{e^{- \frac{(u - c)^2}{2\sigma^2}}}
+\large{e^{- \frac{(u - c)^2}{2\sigma^2}}}
 \end{equation}
 
-Onde \large{$e$} é a função exponencial de $(u-c)^2$ que é a \textbf{distância euclidiana} entre centro ($c$) e as amostra ($u$), pela \textbf{variância} ($\sigma$) ao quadrado multiplicada por 2.
+Onde \textbf{$e$} é a função exponencial de $(u-c)^2$ que é a \textbf{distância euclidiana} entre centro ($c$) e as amostra ($u$), pela \textbf{variância} ($\sigma$) ao quadrado multiplicada por 2.\\
 
 \subsection{Particle Swarm Optimisation --- PSO}
-A otimização através de enxame de partículas é uma técnica \textbf{estocástica} baseada em processos comportamentais de grupos de animais criada pelo \textit{Dr. Eberhart} e  \textit{Dr. Kennedy} em 1995. O \textit{PSO} possui várias similaridades com as técnicas evolucionárias como os \textbf{Algoritmos Genéticos}, pois utiliza o conceito de vida artificial para interpretar comportamentos biológicos. Porém, apesar de possuir algumas similaridades como inicialização aleatória da população, a presença de um fator comparativo para avaliar a população (fitness) e atualização da população à medida que procuram pela solução ótima, diferenciam-se quanto a presença de operadores evolucionários como o \textbf{crossover} e a \textbf{mutação}. Isso resulta na evolução apenas da procura pela solução ótima e nao dos organismos em si.\\
-O conceito é gerar uma coleção de partículas dentro de um espaço de função cujas dimensões são variáveis com o número de neurônios da camada escondida da \textit{RBF}. Cada partícula, então, segue o líder do enxame através da melhor partícula global em cada iteração, atualizando sua velocidade (e consequentemente sua posição) através das equações $(a)$ e $(b)$ que serão discutidas em breve. Nessa implementação \textbf{não} foram consideradas topologias de vizinhança para as partículas.~\cite{xiao}\\Abaixo, segue o algoritmo em pseudo-código do procedimento.
+A otimização através de enxame de partículas é uma técnica \textbf{estocástica} baseada em processos comportamentais de grupos de animais criada pelo \textit{Dr. Eberhart} e  \textit{Dr. Kennedy} em 1995. O \textit{PSO} possui várias similaridades com as técnicas evolucionárias como os \textbf{Algoritmos Genéticos}, pois utiliza o conceito de vida artificial para interpretar comportamentos biológicos, e, por isso, é bastante utilizada em \textit{computer animation} e \textit{computer aided design}. No entanto, apesar de possuir algumas similaridades como inicialização aleatória da população, a presença de um fator comparativo para avaliar a população (fitness) e atualização da população à medida que procuram pela solução ótima, diferenciam-se quanto a presença de operadores evolucionários como o \textbf{crossover} e a \textbf{mutação}. Isso resulta na evolução apenas da procura pela solução ótima e nao dos organismos em si.~\cite{xiao}\\\\O conceito do algoritmo é gerar uma coleção de partículas dentro de um espaço de função cujas dimensões são variáveis com o número de neurônios da camada escondida da \textit{RBF}. Cada partícula, então, segue o líder do enxame (através da melhor partícula global em cada iteração), atualizando sua velocidade e consequentemente sua posição através das equações $(a)$ e $(b)$~\cite{xiao} que serão discutidas abaixo. Após $e$ iterações do algoritmo, uma partícula será escolhida como a melhor do enxame dentre todas as épocas, e sua posição será usada no cálculo final da classificação na \textit{RBF} como o conjunto de pesos \{$w_1, w_2, w_3, ..., w_e$\} otimizado.\\Nessa implementação \textbf{não} foram consideradas topologias de vizinhança para as partículas, ou seja, não há troca de informação entre as partículas vizinhas.~\cite{artigo}\\Abaixo, segue o algoritmo em pseudo-código do procedimento.
 \newpage
 \begin{algorithm}[h!]
 \Inicio{
@@ -121,7 +124,7 @@ atualize a posição de acordo com a equação (b)\;
 \caption{Pseudo-código do PSO}
 \end{algorithm}
 
-Após as partículas serem inicializadas no espaço de função (intervalo de $-1 a 1$) é calculado o valor do \textbf{fitness} de cada partícula. O cálculo do valor é feito pela \textit{RBF} como o percentual de erro, discutido na seção acima.
+Após as partículas serem inicializadas no espaço de função (intervalo de $-1$ a $1$) é calculado o valor do \textbf{fitness} de cada partícula. O cálculo do valor é feito pela \textit{RBF} como o percentual de erro, discutido na seção acima.
 Após o fitness ter sido calculado definimos o melhor global, que age como um fator de liderança para as demais partículas, e o melhor local da partícula (fator inércia). A partir deles, podemos calcular os vetores resultantes auxiliares e depois o vetor velocidade final que irá atualizar a posição da partícula no espaço. As equações de cálculo da velocidade e atualização da posição seguem:
 
 \begin{center}
@@ -139,19 +142,52 @@ Onde $\vec{pos}$ é o vetor posição atual da partícula a ser atualizado, $\ve
 \section{Experimentos}
 
 \subsection{Variando o número de neurônios, épocas e partículas}
-Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
-
-Nullam pulvinar nunc nec interdum sodales. Cras elit erat, gravida id tortor eu, molestie volutpat felis. Duis quis ipsum sapien. Etiam nec porttitor est. Vestibulum neque leo, sagittis id interdum vitae, congue a mi. Vestibulum interdum ipsum id viverra egestas. Suspendisse iaculis turpis nibh, a viverra dolor tempor eget. Donec volutpat, sapien a auctor venenatis, justo enim gravida nisi, vitae laoreet ipsum ligula sit amet mauris. Proin rhoncus auctor lectus, in dignissim elit.
-
+Foram realizados experimentos modificando os parâmetros do número de neurônios, número de épocas e número de partículas no enxame. Os parâmetros são tratados como $n$, $e$, e $t$ respectivamente. Os experimentos realizados tem como objetivo observar as mudanças quanto à \textbf{taxa de acerto} ($c$) e o \textbf{fitness} ($f$) para a base de dados de entrada em três iterações para cada parâmetro alterado. No apêndice encontram-se as tabelas com os resultados dos experimentos realizados.
 \subsection{Observações}
-Nullam pulvinar nunc nec interdum sodales. Cras elit erat, gravida id tortor eu, molestie volutpat felis. Duis quis ipsum sapien. Etiam nec porttitor est. Vestibulum neque leo, sagittis id interdum vitae, congue a mi. Vestibulum interdum ipsum id viverra egestas.
+Foi observado que, para ambas as bases de dados, quando a rede neural está configurada como $n=5$, $e=10$, e $t=20$ foram obtidos melhores resultados em relação às saídas $c$ e $f$. Há um declínio observado no fitness e na taxa de acerto quando aumentamos o número de neurônios, épocas e partículas em ambas as tabelas 1 e 2.
 
 \section{Conclusão}
-
-Nullam pulvinar nunc nec interdum sodales. Cras elit erat, gravida id tortor eu, molestie volutpat felis. Duis quis ipsum sapien. Etiam nec porttitor est. Vestibulum neque leo, sagittis id interdum vitae, congue a mi. Vestibulum interdum ipsum id viverra egestas. Suspendisse iaculis turpis nibh, a viverra dolor tempor eget. Donec volutpat, sapien a auctor venenatis, justo enim gravida nisi, vitae laoreet ipsum ligula sit amet mauris. Proin rhoncus auctor lectus, in dignissim elit.
-
+Redes neurais artificiais \textit{ou RNAs}, possuem uma grande aplicabilidade em diversas áreas de classificação de padrões. Aliada com o algoritmo de otimização de enxame de partículas \textit{PSO}, seu desempenho é melhorado em relação a taxa de acertos. Em nossos experimentos percebemos que ainda há alguns ajustes (\textit{fine-tuning}) nos parâmetros tanto da \textit{RBF} e \textit{PSO}, para que possamos atingir uma solução ótima no teste com as bases de dados fornecidas.
 {\small
 \bibliographystyle{ieee}
 \bibliography{rna}
 }
+
+\onecolumn
+\section*{Apêndice}
+\subsection*{Tabelas dos experimentos}
+Aqui encontram-se as tabelas com os resultados dos experimentos feitos com as bases de dados \textit{Iris.txt} e \textit{Banknote.txt}.\\\\
+\begin{center}
+\begin{table*}[h]\centering
+\ra{1.3}
+\begin{tabular}{@{}rrrrcrrrcrrr@{}}\toprule
+& \multicolumn{3}{c}{1} & \phantom{abc}& \multicolumn{3}{c}{2} &
+\phantom{abc} & \multicolumn{3}{c}{3}\\
+\cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+& $n=5$ & $e=10$ & $t=20$ && $n=10$ & $e=50$ & $t=100$ && $n=20$ & $e=30$ & $t=50$\\ \midrule
+tx. acerto\\
+$c$ & 70 & 78 & 76 && 66 & 70 & 54 && 56 & 64 & 60\\
+fitness\\
+$f$ & 0.99833& 0.99887& 0.99909&& 0.99918& 0.99975& 0.99847&& 0.99969& 0.99971& 0.99981\\
+\bottomrule
+\end{tabular}
+\caption{Resultados dos experimentos com a base de dados Iris.txt}
+\end{table*}
+\vskip 50pt
+\begin{table*}[h]\centering
+\ra{1.3}
+\begin{tabular}{@{}rrrrcrrrcrrr@{}}\toprule
+& \multicolumn{3}{c}{1} & \phantom{abc}& \multicolumn{3}{c}{2} &
+\phantom{abc} & \multicolumn{3}{c}{3}\\
+\cmidrule{2-4} \cmidrule{6-8} \cmidrule{10-12}
+& $n=5$ & $e=10$ & $t=20$ && $n=10$ & $e=50$ & $t=100$ && $n=20$ & $e=30$ & $t=50$\\ \midrule
+tx. acerto\\
+$c$ & 78 & 82.0 & 72 && 60 & 56 & 66 && 72 & 70 & 76\\
+fitness\\
+$f$ & 0.99881& 0.99926& 0.99909&& 0.99940& 0.99955& 0.99888&& 0.99946& 0.99951& 0.99971\\
+\bottomrule
+\end{tabular}
+\caption{Resultados dos experimentos com a base de dados Banknote.txt}
+\end{table*}
+\end{center}
 \end{document}
