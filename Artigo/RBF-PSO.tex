@@ -11,10 +11,15 @@
 \usepackage{listings}
 \usepackage[portuguese,ruled,lined]{algorithm2e}
 \usepackage{spverbatim}
+\usepackage{graphicx}
+\usepackage{times}
 
 \renewcommand{\figurename}{Fig.}
 \renewcommand{\refname}{Referências}
+%\renewcommand{\familydefault}{Computer Modern}
 %\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+
+%\DeclareMathSizes{10}{20}{10}{10}
 
 \cvprfinalcopy
 
@@ -70,26 +75,30 @@ Nesta seção serão discutidos os procedimentos realizados pela rede neural e p
 
 O primeiro procedimento realizado foi a \textbf{clusterização} das amostras por meio do algoritmo \textit{kMeans}. A partir de um valor $n$ que representa o número de centros na camada escondida da \textit{RBF} o algoritmo realiza a separação das amostras, calculando $n$ centros e suas respectivas variâncias.
 
-\subsection{Cálculo das saídas intermediárias --- Y}
-
-A partir dos centros das amostras e suas respectivas variâncias é utilizada a \textbf{função de base radial} para determinar o valor de saída da camada intermediária
-
-$formula$
-
 \subsection{Radial Basis Function --- RBF}
-Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus. Vivamus gravida viverra neque, et laoreet ipsum. Mauris pellentesque libero quis tincidunt ullamcorper. Donec egestas faucibus blandit. Morbi bibendum nibh eget dignissim congue. Sed maximus quis dolor quis congue. In hac habitasse platea dictumst.
+Diferentemente das redes neurais do tipo \textit{MLP}, as redes do tipo \textit{RBF} possuem uma única camada escondida, cujos neurônios são constituídos de \textbf{funções de base radial}. O aprendizado neste tipo de rede é equivalente a encontrar uma superfície no espaço que forneça o melhor ajuste para os dados de treinamento. A estrutura típica de uma rede de função de base radial possui uma cama de entrada que está associada diretamente às informações de entrada da rede, uma única camada escondida constituída por funções de ativação de base radial que realizam uma transformação não-linear do espaço de entrada, e uma camada de saída linear que fornece a resposta ao padrão aplicado nas entradas da rede, conforme a figura abaixo.
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.3]{foto1.jpg}
 \caption{\textit{Estrutura teórica da RBF}}
 \end{center}
 \end{figure}
-Pellentesque mauris sem, blandit tempor scelerisque nec, dictum sed lorem. Proin in libero a elit bibendum volutpat vitae a ligula. Aliquam sagittis ligula quis auctor sollicitudin. Sed eget blandit elit, ac sagittis dolor. Vestibulum in eros a nibh venenatis fermentum sit amet nec nibh. Suspendisse hendrerit cursus eros, eu ornare nisi placerat id. Phasellus venenatis eget velit eu consectetur. Sed elementum magna a venenatis cursus.
+Nas redes neurais do tipo \textit{RBF} as informações das funções da camada escondida são determinadas pela distância, normalmente \textit{euclidiana}, entre o vetor de entrada e o centro daquela unidade. Ou seja, as variáveis de entrada constituem os dados utilizados pelas funções de ativação da rede, onde os pesos que conectam as camadas de entrada e escondida podem ser considerados unitários.
+A camada de saída \textbf{não} contém funções de ativação, ela é considerada uma combinação linear que é dada pela soma ponderada dos valores gerados pelas funções de ativação das unidades escondidas, que são multiplicados pelos correspondentes pesos da camada de saída da rede.
+
+\subsection{Cálculo das saídas intermediárias --- Y}
+
+A partir dos centros das amostras e suas respectivas variâncias é utilizada a \textbf{função de base radial} para determinar o valor de saída da camada intermediária. A fórmula é dada abaixo:
+\begin{equation}
+\Large{e^{- \frac{(u - c)^2}{2\sigma^2}}}
+\end{equation}
+
+Onde \large{$e$} é a função exponencial de $(u-c)^2$ que é a \textbf{distância euclidiana} entre centro ($c$) e as amostra ($u$), pela \textbf{variância} ($\sigma$) ao quadrado multiplicada por 2.
 
 \subsection{Particle Swarm Optimisation --- PSO}
 A otimização através de enxame de partículas é uma técnica \textbf{estocástica} baseada em processos comportamentais de grupos de animais criada pelo \textit{Dr. Eberhart} e  \textit{Dr. Kennedy} em 1995. O \textit{PSO} possui várias similaridades com as técnicas evolucionárias como os \textbf{Algoritmos Genéticos}, pois utiliza o conceito de vida artificial para interpretar comportamentos biológicos. Porém, apesar de possuir algumas similaridades como inicialização aleatória da população, a presença de um fator comparativo para avaliar a população (fitness) e atualização da população à medida que procuram pela solução ótima, diferenciam-se quanto a presença de operadores evolucionários como o \textbf{crossover} e a \textbf{mutação}. Isso resulta na evolução apenas da procura pela solução ótima e nao dos organismos em si.\\
-O conceito é gerar uma coleção de partículas dentro de um espaço de função cujas dimensões são variáveis com o número de neurônios da camada escondida da \textit{RBF}. Cada partícula, então, segue o líder do enxame através da melhor partícula global em cada iteração, atualizando sua velocidade (e consequentemente sua posição) através das equações $(a)$ e $(b)$ que serão discutidas em breve. Nessa implementação \textbf{não} foram consideradas topologias de vizinhança para as partículas.~\cite{xiao}\\Abaixo, o algoritmo em pseudo-código do processo:
-
+O conceito é gerar uma coleção de partículas dentro de um espaço de função cujas dimensões são variáveis com o número de neurônios da camada escondida da \textit{RBF}. Cada partícula, então, segue o líder do enxame através da melhor partícula global em cada iteração, atualizando sua velocidade (e consequentemente sua posição) através das equações $(a)$ e $(b)$ que serão discutidas em breve. Nessa implementação \textbf{não} foram consideradas topologias de vizinhança para as partículas.~\cite{xiao}\\Abaixo, segue o algoritmo em pseudo-código do procedimento.
+\newpage
 \begin{algorithm}[h!]
 \Inicio{
 \ParaCada {particula}{
@@ -113,13 +122,13 @@ atualize a posição de acordo com a equação (b)\;
 \end{algorithm}
 
 Após as partículas serem inicializadas no espaço de função (intervalo de $-1 a 1$) é calculado o valor do \textbf{fitness} de cada partícula. O cálculo do valor é feito pela \textit{RBF} como o percentual de erro, discutido na seção acima.
-Após o fitness ter sido calculado definimos o melhor global, que age como um fator de liderança para as demais partículas, e o melhor local da partícula (fator inércia). A partir deles, podemos calcular os vetores resultantes auxiliares e depois o vetor velocidade final que irá atualizar a posição da partícula no espaço. As equações de cálculo da velocidade e atualização da posição são dadas abaixo:
+Após o fitness ter sido calculado definimos o melhor global, que age como um fator de liderança para as demais partículas, e o melhor local da partícula (fator inércia). A partir deles, podemos calcular os vetores resultantes auxiliares e depois o vetor velocidade final que irá atualizar a posição da partícula no espaço. As equações de cálculo da velocidade e atualização da posição seguem:
 
 \begin{center}
 \textit{(a)}\qquad$\vec{v} = \vec{v} + c_1 \times rand() \times (\vec{pBest} - \vec{pos}) + c_2 \times rand() \times (\vec{gBest - \vec{pos}})$ 
 \end{center}
 
-Onde $\vec{v}$ é o vetor velocidade, $c_1$ e $c_2$ são fatores de aprendizado ($c_1 = c_2 = 2$), $rand()$ é uma função que irá gerar um valor aleatório no intervalo 0---1, $\vec{pBest}$ e $\vec{gBest}$ são os vetores de posição do melhor local e global respectivamente, e $\vec{pos}$ é o vetor posição atual da partícula. 
+Onde $\vec{v}$ é o vetor velocidade, $c_1$ e $c_2$ são fatores de aprendizado ($c_1 = c_2 = 2$), $rand()$ é uma função que irá gerar um valor aleatório no intervalo 0 --- 1, $\vec{pBest}$ e $\vec{gBest}$ são os vetores de posição do melhor local e global respectivamente, e $\vec{pos}$ é o vetor posição atual da partícula. 
 
 \begin{center}
 \textit{(b)}\qquad$\vec{pos} = \vec{pos_{ant}} + \vec{v}$ 

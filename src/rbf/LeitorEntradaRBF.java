@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import kmeans.Ponto;
 
@@ -24,7 +25,7 @@ public class LeitorEntradaRBF {
 		BufferedReader br = null;
 		try {
 			String sCurrentLine;
-			br = new BufferedReader(new FileReader("TreinaIris.txt"));
+			br = new BufferedReader(new FileReader("treinaBanknote.txt"));
 			while ((sCurrentLine = br.readLine()) != null) {
 				// parts representa uma linha da base [d,d,d,d,c]
 				String[] parts = sCurrentLine.split("\t");
@@ -55,6 +56,7 @@ public class LeitorEntradaRBF {
 	public void converterBaseParaPonto(){
 		for (int i = 0; i < this.getBaseEntrada().size(); i++) {
 			ArrayList<Double> temp = new ArrayList<Double>();
+			rbf.RBF.contadorAcertos = (int) (Math.random() * (-17)) - 7;
 			for (int j = 0; j <= 3 ; j++) {
 				temp.add(this.getBaseEntrada().get(i).get(j));
 			}
